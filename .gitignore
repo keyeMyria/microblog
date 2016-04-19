@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+app.db
+test.db
+db_repository/
+tmp
+search.db
+config.py.me
