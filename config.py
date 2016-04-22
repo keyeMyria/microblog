@@ -36,5 +36,5 @@ MAX_SEARCH_RESULTS = 50
 
 LANGUAGES = {
     'en':'English',
-    'zh-CN':'简体中文'
+    'zh_CN':'简体中文'
 }

@@ -9,6 +9,7 @@ from .models import User, Post
 from config import POSTS_PER_PAGE, MAX_SEARCH_RESULTS, LANGUAGES
 from forms import SearchForm
 from .emails import follower_notification
+from flask.ext.babel import gettext
 
 @app.errorhandler(404)
 def not_found_error(error):
@@ -104,7 +105,7 @@ def before_request():
         db.session.add(g.user)
         db.session.commit()
         g.search_form = SearchForm()
-
+    g.locale = get_locale()
 
 @app.route('/logout')
 def logout():

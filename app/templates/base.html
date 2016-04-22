@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script src="/static/js/moment-with-locales.min.js"></script>
-    <script>moment.locale("zh-CN")</script>
+    <script>moment.locale("{{ g.locale }}")</script>
     {% if title %}
         <title>{{ title }} microblog</title>
     {% else %}
