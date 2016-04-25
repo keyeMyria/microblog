@@ -36,5 +36,9 @@ MAX_SEARCH_RESULTS = 50
 
 LANGUAGES = {
     'en':'English',
-    'zh_CN':'简体中文'
+    'zh':'简体中文'
 }
+
+# microsoft translation service
+MS_TRANSLATOR_CLIENT_ID = 'yourid' 
+MS_TRANSLATOR_CLIENT_SECRET = 'yoursecret'

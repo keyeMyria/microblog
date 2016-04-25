@@ -3,7 +3,11 @@
         <td><img src="{{ post.author.avatar(64)}}" alt="{{ post.author.nickname }}"></td>
         <td>
             <p><a href="{{ url_for('user', nickname=post.author.nickname)}}">{{ post.author.nickname }}</a> said {{ momentjs(post.timestamp).fromNow() }}:</p>
-            <p><strong>{{ post.body }}</strong></p>
+            <p><strong><span id="post{{ post.id }}">{{ post.body }}</span></strong></p>
+            {% if post.language != None and post.language !='' and post.language != g.locale %}
+            <img src="/static/images/loading.gif" id="loading{{ post.id }}" style="display:none">
+            <div><span id="translation{{ post.id }}"><a href="javascript:translate('{{ post.language }}', '{{ g.locale }}', '#post{{ post.id }}', '#translation{{ post.id }}', '#loading{{ post.id }}');">Translate</a></span></div>
+            {% endif %}
         </td>
     </tr>
 </table>

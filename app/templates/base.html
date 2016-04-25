@@ -33,5 +33,25 @@
         {% endif %}
     {% endwith %}    
     {% block content %}{% endblock %}
+<script src="/static/js/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>    
+<script>
+    function translate(sourceLang, destLang, sourceID, destID, loadingID){
+        $(destID).hide();
+        $(loadingID).show();
+        $.post('/translate',{
+            text:$(sourceID).text(),
+            sourceLang:sourceLang,
+            destLang:destLang
+        }).done(function(translated){
+            $(destID).text(translated['text']);
+            $(loadingID).hide();
+            $(destID).show();
+        }).fail(function(){
+            $(destID).text("Translate failed!");
+            $(loadingID).hide();
+            $(destID).show();
+        });
+    }
+</script>
 </body>
 </html>
